@@ -60,6 +60,27 @@
             color: #333;
             font-size: 20px;
         }
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+            .nav-links a {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.9375rem;
+            }
+            nav {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 0.25rem;
+            }
+            .nav-links a {
+                padding: 0.25rem 0.35rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -74,7 +95,7 @@
         </div>
         <a href="#about" class="scroll-indicator">
             <div class="scroll-circle">
-                <i class="fas fa-plus"></i>
+                <i class="fas fa-chevron-down"></i>
             </div>
         </a>
     </div>
@@ -98,6 +119,11 @@
             <h2 class="text-4xl font-bold text-center mb-8">About Us</h2>
             <p class="text-lg text-center text-gray-700 mb-8">At Smart Tech Pro Systems, we specialize in delivering state-of-the-art audio-visual solutions tailored to your unique needs. Whether it’s a home theater or a smart office setup, we ensure quality, reliability, and innovation in every project.</p>
         </div>
+        <a href="#services" class="scroll-indicator">
+            <div class="scroll-circle">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
     </section>
 
     <!-- Services Section -->
@@ -119,6 +145,11 @@
                 </div>
             </div>
         </div>
+        <a href="#portfolio" class="scroll-indicator">
+            <div class="scroll-circle">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
     </section>
 
     <!-- Portfolio Section -->
@@ -140,6 +171,11 @@
                 </div>
             </div>
         </div>
+        <a href="#testimonials" class="scroll-indicator">
+            <div class="scroll-circle">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
     </section>
 
     <!-- Testimonials Section -->
@@ -157,6 +193,11 @@
                 </div>
             </div>
         </div>
+        <a href="#contact" class="scroll-indicator">
+            <div class="scroll-circle">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
     </section>
 
     <!-- Contact Us Section -->
