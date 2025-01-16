@@ -64,16 +64,19 @@
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 0.25rem 0.5rem;
-                padding: 0.5rem;
+                gap: 0.5rem;
+                padding: 0.25rem;
             }
             .nav-links a {
-                padding: 0.15rem 0.5rem;
-                font-size: 0.9375rem;
-                line-height: 1.2;
+                padding: 0.25rem 0.75rem;
+                font-size: 0.875rem;
+                white-space: nowrap;
             }
-            nav {
-                padding: 0.5rem;
+            nav .container {
+                padding: 0.5rem 0.25rem;
+            }
+            nav .flex {
+                gap: 0.5rem;
             }
         }
         @media (max-width: 480px) {
@@ -81,7 +84,8 @@
                 gap: 0.25rem;
             }
             .nav-links a {
-                padding: 0.25rem 0.35rem;
+                padding: 0.25rem 0.5rem;
+                font-size: 0.8125rem;
             }
         }
     </style>
@@ -106,7 +110,7 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-center space-x-8">
+            <div class="flex justify-center nav-links">
                 <a href="#about" class="text-gray-700 hover:text-gray-900">About Us</a>
                 <a href="#services" class="text-gray-700 hover:text-gray-900">Services</a>
                 <a href="#portfolio" class="text-gray-700 hover:text-gray-900">Portfolio</a>
