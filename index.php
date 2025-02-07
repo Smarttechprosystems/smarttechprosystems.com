@@ -98,6 +98,10 @@
         .nav-links {
             gap: 1rem;              /* Restore original desktop gap */
         }
+        span.phonebrk {
+    display: inline-block;
+    margin-left: 35px;
+}
     </style>  
 </head>
 <body>
