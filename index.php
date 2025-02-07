@@ -111,6 +111,7 @@
             <source src="/assets/video/hero_architect_1.mp4" type="video/mp4">
         </video>
         <div class="video-overlay">
+            <img src="https://smarttechprosystems.com/assets/images/Smart Tech Logo.png" alt="Logo"/>
             <h1 class="text-6xl font-bold mb-4">Welcome to Smart Tech Pro Systems</h1>
             <p class="text-2xl">Innovative AV Solutions for Your Home and Business</p>
         </div>
