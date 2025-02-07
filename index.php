@@ -339,7 +339,31 @@
     <section id="contact" class="section bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
+            
             <h3 class="text-4xl font-bold text-center mb-8"><span>1-855-HIFI-805</span><br><span class="phonebrk"><small>(4434)</small></h3>
+             <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $message = htmlspecialchars($_POST["message"]);
+
+    $to = "barwal9@gmail.com";  // Your email
+    $subject = "New Contact Form Submission";
+    $headers = "From: no-reply@yourdomain.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    $body = "Name: $name\n";
+    $body .= "Email: $email\n";
+    $body .= "Message:\n$message\n";
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<p style='color: green;'>Message sent successfully!</p>";
+    } else {
+        echo "<p style='color: red;'>Error sending message.</p>";
+    }
+}
+?>   
             <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow" method="POST">
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700">Name</label>
