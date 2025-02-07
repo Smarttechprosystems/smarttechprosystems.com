@@ -99,6 +99,102 @@
             gap: 1rem;              /* Restore original desktop gap */
         }
     </style>
+    Share
+
+
+You said:
+ <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Name</label>
+                    <input type="text" id="name" class="w-full p-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" class="w-full p-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700">Message</label>
+                    <textarea id="message" rows="4" class="w-full p-2 border rounded"></textarea>
+                </div>
+                <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
+            </form>
+
+i have this form in html file I want to send submitted data in this Id info@smarttechprosystems.com
+
+without PHP and other landgauge using html
+ChatGPT said:
+HTML alone cannot send emails directly. However, you can use Formspree or Getform, which are third-party services that allow you to send form submissions via email without needing backend code like PHP.
+
+Using Formspree (Recommended)
+Go to Formspree and sign up.
+Replace your form with the following code:
+html
+Copy
+Edit
+<form action="https://formspree.io/f/{YOUR_FORM_ID}" method="POST" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow">
+    <div class="mb-4">
+        <label for="name" class="block text-gray-700">Name</label>
+        <input type="text" id="name" name="name" required class="w-full p-2 border rounded">
+    </div>
+    <div class="mb-4">
+        <label for="email" class="block text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required class="w-full p-2 border rounded">
+    </div>
+    <div class="mb-4">
+        <label for="message" class="block text-gray-700">Message</label>
+        <textarea id="message" name="message" rows="4" required class="w-full p-2 border rounded"></textarea>
+    </div>
+    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
+</form>
+Steps:
+Replace {YOUR_FORM_ID} with the Formspree form ID after setting up your account.
+Form submissions will be emailed to your desired address.
+Alternatively, you can use Getform (https://getform.io/) for similar functionality.
+
+Let me know if you need further assistance! 🚀
+
+
+
+
+
+
+
+You said:
+okay lets convert html to php
+ChatGPT said:
+Here's your form converted to PHP so that it sends the submitted data to info@smarttechprosystems.com:
+
+Steps:
+Save this file as contact.php.
+Ensure your hosting supports PHP.
+Replace "yourdomain.com" in the headers with your actual domain.
+PHP Contact Form (contact.php)
+php
+Copy
+Edit
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $message = htmlspecialchars($_POST["message"]);
+
+    $to = "barwal9@gmail.com";  // Your email
+    $subject = "New Contact Form Submission";
+    $headers = "From: no-reply@yourdomain.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    $body = "Name: $name\n";
+    $body .= "Email: $email\n";
+    $body .= "Message:\n$message\n";
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<p style='color: green;'>Message sent successfully!</p>";
+    } else {
+        echo "<p style='color: red;'>Error sending message.</p>";
+    }
+}
+?>
 </head>
 <body>
     <!-- Hero Section -->
@@ -336,20 +432,20 @@
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
             <h3 class="text-4xl font-bold text-center mb-8"><span>1-855-HIFI-805</span><br><span class="phonebrk"><small>(4434)</small></h3>
-            <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow">
+            <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow" method="POST">
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700">Name</label>
-                    <input type="text" id="name" class="w-full p-2 border rounded">
+                    <input type="text" id="name"  name="name" class="w-full p-2 border rounded">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" class="w-full p-2 border rounded">
+                    <input type="email" id="email" name="email" class="w-full p-2 border rounded">
                 </div>
                 <div class="mb-4">
                     <label for="message" class="block text-gray-700">Message</label>
-                    <textarea id="message" rows="4" class="w-full p-2 border rounded"></textarea>
+                    <textarea id="message" name="message" rows="4" class="w-full p-2 border rounded"></textarea>
                 </div>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
+                <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" type="submit">Send Message</button>
             </form>
         </div>
     </section>
