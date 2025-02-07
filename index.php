@@ -341,7 +341,7 @@
             <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
             
             <h3 class="text-4xl font-bold text-center mb-8"><span>1-855-HIFI-805</span><br><span class="phonebrk"><small>(4434)</small></h3>
-             <?php
+ <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST["name"]);
     $email = htmlspecialchars($_POST["email"]);
