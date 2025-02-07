@@ -111,7 +111,7 @@
             <source src="/assets/video/hero_architect_1.mp4" type="video/mp4">
         </video>
         <div class="video-overlay">
-            <img src="https://smarttechprosystems.com/assets/images/Smart Tech Logo.png" alt="Logo"/>
+            <img src="https://smarttechprosystems.com/assets/images/Smart Tech Logo.png" alt="Logo" style="width:200px"/>
             <h1 class="text-6xl font-bold mb-4">Welcome to Smart Tech Pro Systems</h1>
             <p class="text-2xl">Innovative AV Solutions for Your Home and Business</p>
         </div>
@@ -348,7 +348,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST["email"]);
     $message = htmlspecialchars($_POST["message"]);
 
-    $to = "barwal9@gmail.com";  // Your email
+    $to = "info@smarttechprosystems.com";  // Your email
     $subject = "New Contact Form Submission";
     $headers = "From: no-reply@yourdomain.com\r\n";
     $headers .= "Reply-To: $email\r\n";
