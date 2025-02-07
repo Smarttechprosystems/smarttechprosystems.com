@@ -98,8 +98,7 @@
         .nav-links {
             gap: 1rem;              /* Restore original desktop gap */
         }
-    </style>
-  
+    </style>  
 </head>
 <body>
     <!-- Hero Section -->
