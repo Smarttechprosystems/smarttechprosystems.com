@@ -25,3 +25,14 @@ function openModal(imgSrc, imgAlt) {
 function closeModal() {
     document.getElementById('imageModal').style.display = "none";
 } 
+
+function scrollToIdWithOffset(id, offset = 200) {
+    const element = document.getElementById(id);
+    if (element) {
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+        });
+    }
+}
